@@ -39,7 +39,7 @@
         <div class="sidebar-body">
             <ul class="sidebar-body-menu">
                 <li>
-<<<<<<< HEAD
+
                     <a class="active" href="/admin_dashboard"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
                 <li>
@@ -58,9 +58,9 @@
                             <a href="/add_new_header">Add new Header</a>
                         </li>
                     </ul>
-=======
-                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
->>>>>>> 3a6179a23b281024741b27a42226f0c5599bac99
+
+                    
+
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">

@@ -9,7 +9,6 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-<<<<<<< HEAD
 $routes->get('firebase-test/send-data', 'FirebaseTest::sendData');
 //$routes->post('firebase-test/send-data', 'FirebaseTest::sendData');
 $routes->get('firebase-test/fetch-data', 'FirebaseTest::fetchData');
@@ -21,8 +20,6 @@ $routes->get('firebase-test/fetch-data', 'FirebaseTest::fetchData');
 
 
 
-=======
->>>>>>> 3a6179a23b281024741b27a42226f0c5599bac99
 //////Register///////
 $routes->get('register', 'Auth\Register::index',['filter' => 'authRedirect']); //Register is a controller
 $routes->post('register/save', 'Auth\Register::save'); //Register is a controller
@@ -33,11 +30,7 @@ $routes->get('login', 'Auth\Login::login_index',['filter' => 'authRedirect']); /
 $routes->post('login', 'Auth\Login::login'); //Login is a controller
 
 ///// Frontend Home////////////////
-<<<<<<< HEAD
  $routes->get('home', 'Frontend\HomeController::home_index'); //Login is a controller
-=======
-$routes->get('home', 'Frontend\HomeController::home_index'); //Login is a controller
->>>>>>> 3a6179a23b281024741b27a42226f0c5599bac99
 
 
 ////////Backend Home///////////////
@@ -49,7 +42,6 @@ $routes->post('/dogfoodproduct/store', 'Backend\DogFoodProductController::store'
 $routes->get('dogfoodproduct/delete/(:num)', 'Backend\DashboardController::delete/$1');
 $routes->get('dogfoodproduct/toggle/(:num)', 'Backend\DashboardController::toggle/$1');
 
-<<<<<<< HEAD
 // Header management routes
 $routes->get('headers_listing', 'Backend\HeaderController::index', ['filter' => 'authGuard']);
 $routes->post('headers_listing', 'Backend\HeaderController::index', ['filter' => 'authGuard']);
@@ -63,8 +55,6 @@ $routes->get('delete_header/(:num)', 'Backend\HeaderController::delete/$1', ['fi
 
 
 
-=======
->>>>>>> 3a6179a23b281024741b27a42226f0c5599bac99
 
 
 
