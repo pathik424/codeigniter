@@ -514,48 +514,29 @@
           </div>
         </div>
         <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('<?php echo base_url('FontendAssets/images/image_1.jpg'); ?>');">
-              </a>
-              <div class="text p-4">
-              	<div class="meta mb-2">
-                  <div><a href="#">April 07, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
+			
+          <?php if (!empty($posts)): ?>
+            <?php foreach ($posts as $post): ?>
+              <div class="col-md-4 d-flex ftco-animate">
+                <div class="blog-entry align-self-stretch">
+                  <a href="<?= base_url('post/' . $post['post_id']) ?>" class="block-20 rounded" style="background-image: url('<?php echo $post['image'] ? base_url('uploads/posts/' . $post['image']) : base_url('FontendAssets/images/image_1.jpg'); ?>');">
+                  </a>
+                  <div class="text p-4">
+                    <div class="meta mb-2">
+                      <div><a href="<?= base_url('post/' . $post['post_id']) ?>"><?= date('F d, Y', strtotime($post['created_at'])) ?></a></div>
+                      <div><a href="#"><?= esc($post['author_name']) ?></a></div>
+                    </div>
+                    <h3 class="heading"><a href="<?= base_url('post/' . $post['post_id']) ?>"><?= esc($post['title']) ?></a></h3>
+                  </div>
                 </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
               </div>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <div class="col-12 text-center">
+              <p>No posts available.</p>
             </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('<?php echo base_url('FontendAssets/images/image_2.jpg'); ?>');">
-              </a>
-              <div class="text p-4">
-              	<div class="meta mb-2">
-                  <div><a href="#">April 07, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20 rounded" style="background-image: url('<?php echo base_url('FontendAssets/images/image_3.jpg'); ?>');">
-              </a>
-              <div class="text p-4">
-              	<div class="meta mb-2">
-                  <div><a href="#">April 07, 2020</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="fa fa-comment"></span> 3</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-              </div>
-            </div>
-          </div>
+          <?php endif; ?>
+
         </div>
       </div>
     </section>
@@ -566,20 +547,23 @@
     		<div class="row d-md-flex justify-content-end">
     			<div class="col-md-12 col-lg-6 half p-3 py-5 pl-lg-5 ftco-animate">
     				<h2 class="mb-4">Free Consultation</h2>
-    				<form action="#" class="appointment">
+                <?php if (session()->getFlashdata('consultation_message')): ?>
+                  <div class="alert alert-success"><?= session()->getFlashdata('consultation_message') ?></div>
+                <?php endif; ?>
+    				<form action="<?= base_url('store_consultation') ?>" method="post" class="appointment">
     					<div class="row">
     						<div class="col-md-12">
 									<div class="form-group">
 			    					<div class="form-field">
 	          					<div class="select-wrap">
 	                      <div class="icon"><span class="fa fa-chevron-down"></span></div>
-	                      <select name="" id="" class="form-control">
+	                      <select name="service" id="service" class="form-control" required>
 	                      	<option value="">Select services</option>
-	                        <option value="">Cat Sitting</option>
-	                        <option value="">Dog Walk</option>
-	                        <option value="">Pet Spa</option>
-	                        <option value="">Pet Grooming</option>
-	                        <option value="">Pet Daycare</option>
+	                        <option value="Cat Sitting">Cat Sitting</option>
+	                        <option value="Dog Walk">Dog Walk</option>
+	                        <option value="Pet Spa">Pet Spa</option>
+	                        <option value="Pet Grooming">Pet Grooming</option>
+	                        <option value="Pet Daycare">Pet Daycare</option>
 	                      </select>
 	                    </div>
 			              </div>
@@ -587,19 +571,19 @@
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-			              <input type="text" class="form-control" placeholder="Your Name">
+			              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
 			            </div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-			              <input type="text" class="form-control" placeholder="Vehicle number">
+			              <input type="text" name="vehicle_number" class="form-control" placeholder="Vehicle number">
 			            </div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 			    					<div class="input-wrap">
 			            		<div class="icon"><span class="fa fa-calendar"></span></div>
-			            		<input type="text" class="form-control appointment_date" placeholder="Date">
+			            		<input type="text" name="appointment_date" class="form-control appointment_date" placeholder="Date">
 		            		</div>
 			    				</div>
 								</div>
@@ -607,13 +591,13 @@
 									<div class="form-group">
 			    					<div class="input-wrap">
 			            		<div class="icon"><span class="fa fa-clock-o"></span></div>
-			            		<input type="text" class="form-control appointment_time" placeholder="Time">
+			            		<input type="text" name="appointment_time" class="form-control appointment_time" placeholder="Time">
 		            		</div>
 			    				</div>
 								</div>
 								<div class="col-md-12">
 									<div class="form-group">
-			              <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+			              <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
 			            </div>
 								</div>
 								<div class="col-md-12">

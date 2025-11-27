@@ -4,6 +4,7 @@ namespace App\Controllers\Backend;
 
 use App\Controllers\BaseController;
 use App\Models\Backend\HeaderModel;
+use App\Models\Frontend\ConsultationModel;
 
 class HeaderController extends BaseController
 {
@@ -102,5 +103,12 @@ class HeaderController extends BaseController
         $model = new HeaderModel();
         $model->delete($id);
         return redirect()->to('/headers_listing')->with('message', 'Header deleted');
+    }
+
+    public function consulting_listing()
+    {
+        $model = new ConsultationModel();
+        $data['pathik'] = $model->orderBy('id', 'DESC')->findAll();
+        return view('Backend/consulting_services_list', $data);
     }
 }

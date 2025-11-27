@@ -9,9 +9,9 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-$routes->get('firebase-test/send-data', 'FirebaseTest::sendData');
+// $routes->get('firebase-test/send-data', 'FirebaseTest::sendData');
 //$routes->post('firebase-test/send-data', 'FirebaseTest::sendData');
-$routes->get('firebase-test/fetch-data', 'FirebaseTest::fetchData');
+// $routes->get('firebase-test/fetch-data', 'FirebaseTest::fetchData');
 //$routes->get('firebase-test/fetch-data-json', 'FirebaseTest::fetchDataJson');
 
 
@@ -30,7 +30,9 @@ $routes->get('login', 'Auth\Login::login_index',['filter' => 'authRedirect']); /
 $routes->post('login', 'Auth\Login::login'); //Login is a controller
 
 ///// Frontend Home////////////////
- $routes->get('home', 'Frontend\HomeController::home_index'); //Login is a controller
+ $routes->get('home', 'Frontend\HomeController::home_index');
+ $routes->get('post/(:num)', 'Frontend\HomeController::post_single/$1');
+ $routes->post('store_consultation', 'Frontend\HomeController::store_consultation');
 
 
 ////////Backend Home///////////////
@@ -53,8 +55,20 @@ $routes->post('update_header/(:num)', 'Backend\HeaderController::update/$1', ['f
 $routes->get('header/toggle/(:num)', 'Backend\HeaderController::toggle/$1', ['filter' => 'authGuard']);
 $routes->get('delete_header/(:num)', 'Backend\HeaderController::delete/$1', ['filter' => 'authGuard']);
 
+// Post management routes
+$routes->get('posts_listing', 'Backend\PostController::index', ['filter' => 'authGuard']);
+$routes->get('add_new_post', 'Backend\PostController::create', ['filter' => 'authGuard']);
+$routes->post('store_post', 'Backend\PostController::store', ['filter' => 'authGuard']);
+$routes->get('edit_post/(:num)', 'Backend\PostController::edit/$1', ['filter' => 'authGuard']);
+$routes->post('update_post/(:num)', 'Backend\PostController::update/$1', ['filter' => 'authGuard']);
+$routes->get('delete_post/(:num)', 'Backend\PostController::delete/$1', ['filter' => 'authGuard']);
 
+// SMTP Settings routes
+$routes->get('smtp_settings', 'Backend\SmtpSettingsController::index', ['filter' => 'authGuard']);
+$routes->post('smtp_settings/save', 'Backend\SmtpSettingsController::save', ['filter' => 'authGuard']);
+$routes->get('smtp_settings/test', 'Backend\SmtpSettingsController::test', ['filter' => 'authGuard']);
 
-
+// Consultation management routes
+$routes->get('consulting_services_list', 'Backend\HeaderController::consulting_listing', ['filter' => 'authGuard']);
 
 
