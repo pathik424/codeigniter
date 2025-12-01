@@ -9,6 +9,7 @@ use App\Models\Backend\PostModel;
 use App\Models\Auth\UserModel;
 use App\Models\Frontend\ConsultationModel;
 use App\Models\Backend\SmtpSettingsModel;
+use App\Models\Backend\GalleryModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class HomeController extends BaseController
@@ -42,6 +43,10 @@ class HomeController extends BaseController
             $post['author_name'] = $user ? $user['name'] : 'Admin';
         }
         $data['posts'] = $posts;
+
+        // Fetch gallery images
+        $galleryModel = new GalleryModel();
+        $data['gallery'] = $galleryModel->orderBy('gallery_id', 'DESC')->findAll();
 
         return view('Frontend/home', $data);
     }
@@ -152,5 +157,11 @@ class HomeController extends BaseController
         $email->send();
 
         return true;
+    }
+    public function image_galary_listing()
+    {
+        $model = new GalleryModel();
+        $data['gallery'] = $model->orderBy('gallery_id', 'DESC')->findAll();
+        return view('Frontend/home', $data);
     }
 }

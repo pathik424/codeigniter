@@ -1,0 +1,495 @@
+DEBUG - 2025-11-28 11:11:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:12:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:12:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:12:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:12:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:12:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:12:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:13:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:13:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:13:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:13:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-28 11:23:55 --> mysqli_sql_exception: Table 'codeigniter.pat_contact_us' doesn't exist in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pa...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\codeigniter\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\codeigniter\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\codeigniter\app\Controllers\Frontend\ContactUsController.php(54): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+#9 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+#10 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codeigniter\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\codeigniter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\codeigniter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\codeigniter\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-11-28 11:23:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'codeigniter.pat_contact_us' doesn't exist
+[Method: POST, Route: contact_us]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (:full_name:, :email:, :subject:, :message:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Frontend\ContactUsController.php(54): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2025-11-28 11:23:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'codeigniter.pat_contact_us' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'pathik.aorch@gmail.com\', \'Beagle\', \'BeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagle\', \'2025-11-28 11:23:55\', \'2025-11-28 11:23:55\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'pathik.aorch@gmail.com\', \'Beagle\', \'BeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagle\', \'2025-11-28 11:23:55\', \'2025-11-28 11:23:55\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (:full_name:, :email:, :subject:, :message:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Frontend\ContactUsController.php(54): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2025-11-28 11:23:55 --> [Caused by] mysqli_sql_exception: Table 'codeigniter.pat_contact_us' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'pathik.aorch@gmail.com\', \'Beagle\', \'BeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagle\', \'2025-11-28 11:23:55\', \'2025-11-28 11:23:55\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'pathik.aorch@gmail.com\', \'Beagle\', \'BeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagle\', \'2025-11-28 11:23:55\', \'2025-11-28 11:23:55\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'pathik.aorch@gmail.com\', \'Beagle\', \'BeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagle\', \'2025-11-28 11:23:55\', \'2025-11-28 11:23:55\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (:full_name:, :email:, :subject:, :message:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Frontend\ContactUsController.php(54): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+DEBUG - 2025-11-28 11:24:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-28 11:24:30 --> mysqli_sql_exception: Table 'codeigniter.pat_pat_contact_us' doesn't exist in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pa...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\codeigniter\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\codeigniter\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\codeigniter\app\Controllers\Frontend\ContactUsController.php(54): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+#9 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+#10 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codeigniter\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\codeigniter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\codeigniter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\codeigniter\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-11-28 11:24:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'codeigniter.pat_pat_contact_us' doesn't exist
+[Method: POST, Route: contact_us]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pat_pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (:full_name:, :email:, :subject:, :message:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Frontend\ContactUsController.php(54): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2025-11-28 11:24:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'codeigniter.pat_pat_contact_us' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pat_pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'pathik.aorch@gmail.com\', \'Beagle\', \'BeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagle\', \'2025-11-28 11:24:30\', \'2025-11-28 11:24:30\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pat_pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'pathik.aorch@gmail.com\', \'Beagle\', \'BeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagle\', \'2025-11-28 11:24:30\', \'2025-11-28 11:24:30\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pat_pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (:full_name:, :email:, :subject:, :message:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Frontend\ContactUsController.php(54): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2025-11-28 11:24:30 --> [Caused by] mysqli_sql_exception: Table 'codeigniter.pat_pat_contact_us' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pat_pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'pathik.aorch@gmail.com\', \'Beagle\', \'BeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagle\', \'2025-11-28 11:24:30\', \'2025-11-28 11:24:30\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pat_pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'pathik.aorch@gmail.com\', \'Beagle\', \'BeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagle\', \'2025-11-28 11:24:30\', \'2025-11-28 11:24:30\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pat_pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'pathik.aorch@gmail.com\', \'Beagle\', \'BeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagleBeagle\', \'2025-11-28 11:24:30\', \'2025-11-28 11:24:30\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pat_pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (:full_name:, :email:, :subject:, :message:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Frontend\ContactUsController.php(54): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+DEBUG - 2025-11-28 11:25:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-28 11:25:13 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\codeigniter\system\Email\Email.php:1764
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1764)
+#1 C:\xampp\htdocs\codeigniter\system\Email\Email.php(1764): mail('pathik.aorch@gm...', '=?UTF-8?Q?Conta...', 'You submit the ...', 'Date: Fri, 28 N...', '-f no-reply@exa...')
+#2 C:\xampp\htdocs\codeigniter\system\Email\Email.php(1696): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\codeigniter\system\Email\Email.php(1591): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\Frontend\ContactUsController.php(72): CodeIgniter\Email\Email->send(false)
+#5 C:\xampp\htdocs\codeigniter\app\Controllers\Frontend\ContactUsController.php(56): App\Controllers\Frontend\ContactUsController->sendCustomerMail(Array)
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+#8 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\codeigniter\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\codeigniter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\codeigniter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\codeigniter\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-11-28 11:25:13 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-11-28 11:25:13 --> 
+ERROR - 2025-11-28 11:25:13 --> Failed to send customer contact email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.<br><pre>Date: Fri, 28 Nov 2025 11:25:11 +0000
+From: &quot;Website Contact&quot; &lt;no-reply@example.com&gt;
+Return-Path: &lt;no-reply@example.com&gt;
+Reply-To: &lt;no-reply@example.com&gt;
+User-Agent: CodeIgniter
+X-Sender: no-reply@example.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;69298697d086f6.36015564@example.com&gt;
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+</pre>
+ERROR - 2025-11-28 11:25:15 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\codeigniter\system\Email\Email.php:1764
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1764)
+#1 C:\xampp\htdocs\codeigniter\system\Email\Email.php(1764): mail('admin@example.c...', '=?UTF-8?Q?New=2...', 'A new contact r...', 'Date: Fri, 28 N...', '-f no-reply@exa...')
+#2 C:\xampp\htdocs\codeigniter\system\Email\Email.php(1696): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\codeigniter\system\Email\Email.php(1591): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\Frontend\ContactUsController.php(93): CodeIgniter\Email\Email->send(false)
+#5 C:\xampp\htdocs\codeigniter\app\Controllers\Frontend\ContactUsController.php(57): App\Controllers\Frontend\ContactUsController->sendAdminMail(Array)
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+#8 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\codeigniter\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\codeigniter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\codeigniter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\codeigniter\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-11-28 11:25:15 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-11-28 11:25:15 --> Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-11-28 11:25:15 --> Failed to send admin contact email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.<br>Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.<br><pre>Date: Fri, 28 Nov 2025 11:25:11 +0000
+From: &quot;Website Contact&quot; &lt;no-reply@example.com&gt;
+Return-Path: &lt;no-reply@example.com&gt;
+Reply-To: &lt;no-reply@example.com&gt;
+User-Agent: CodeIgniter
+X-Sender: no-reply@example.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;69298699e43360.18455040@example.com&gt;
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+</pre>
+DEBUG - 2025-11-28 11:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:25:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:25:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:26:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:39:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 11:39:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-28 12:18:11 --> mysqli_sql_exception: Table 'codeigniter.pat_header' doesn't exist in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codeigniter\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\codeigniter\app\Controllers\Frontend\HomeController.php(32): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Frontend\HomeController->home_index()
+#8 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\HomeController))
+#9 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codeigniter\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\codeigniter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\codeigniter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\codeigniter\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-28 12:18:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'codeigniter.pat_header' doesn't exist
+[Method: GET, Route: home]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pat_header`
+WHERE `is_active` = :is_active:
+ORDER BY `id` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Frontend\HomeController.php(32): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\HomeController->home_index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\HomeController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2025-11-28 12:18:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'codeigniter.pat_header' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pat_header`
+WHERE `is_active` = 1
+ORDER BY `id` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pat_header`
+WHERE `is_active` = 1
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pat_header`
+WHERE `is_active` = :is_active:
+ORDER BY `id` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Frontend\HomeController.php(32): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\HomeController->home_index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\HomeController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2025-11-28 12:18:11 --> [Caused by] mysqli_sql_exception: Table 'codeigniter.pat_header' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `pat_header`
+WHERE `is_active` = 1
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pat_header`
+WHERE `is_active` = 1
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pat_header`
+WHERE `is_active` = 1
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pat_header`
+WHERE `is_active` = :is_active:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Frontend\HomeController.php(32): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\HomeController->home_index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\HomeController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+DEBUG - 2025-11-28 12:21:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-28 12:21:13 --> mysqli_sql_exception: Table 'codeigniter.pat_header' doesn't exist in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codeigniter\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\codeigniter\app\Controllers\Frontend\HomeController.php(32): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Frontend\HomeController->home_index()
+#8 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\HomeController))
+#9 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codeigniter\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\codeigniter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\codeigniter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\codeigniter\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-11-28 12:21:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'codeigniter.pat_header' doesn't exist
+[Method: GET, Route: home]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pat_header`
+WHERE `is_active` = :is_active:
+ORDER BY `id` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Frontend\HomeController.php(32): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\HomeController->home_index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\HomeController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2025-11-28 12:21:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'codeigniter.pat_header' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pat_header`
+WHERE `is_active` = 1
+ORDER BY `id` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pat_header`
+WHERE `is_active` = 1
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pat_header`
+WHERE `is_active` = :is_active:
+ORDER BY `id` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Frontend\HomeController.php(32): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\HomeController->home_index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\HomeController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2025-11-28 12:21:13 --> [Caused by] mysqli_sql_exception: Table 'codeigniter.pat_header' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `pat_header`
+WHERE `is_active` = 1
+ORDER BY `id` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pat_header`
+WHERE `is_active` = 1
+ORDER BY `id` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pat_header`
+WHERE `is_active` = 1
+ORDER BY `id` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pat_header`
+WHERE `is_active` = :is_active:
+ORDER BY `id` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Frontend\HomeController.php(32): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\HomeController->home_index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\HomeController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+ERROR - 2025-11-28 12:22:52 --> mysqli_sql_exception: Table 'codeigniter.pat_contact_us' doesn't exist in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pa...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\codeigniter\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\codeigniter\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\codeigniter\app\Controllers\Frontend\ContactUsController.php(53): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+#9 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+#10 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\codeigniter\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\codeigniter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\codeigniter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\codeigniter\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-11-28 12:22:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'codeigniter.pat_contact_us' doesn't exist
+[Method: POST, Route: contact_us]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (:full_name:, :email:, :subject:, :message:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Frontend\ContactUsController.php(53): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2025-11-28 12:22:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'codeigniter.pat_contact_us' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'dev_test43@yopmail.com\', \'Beagle\', \'cdcsdcds\', \'2025-11-28 12:22:52\', \'2025-11-28 12:22:52\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'dev_test43@yopmail.com\', \'Beagle\', \'cdcsdcds\', \'2025-11-28 12:22:52\', \'2025-11-28 12:22:52\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (:full_name:, :email:, :subject:, :message:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Frontend\ContactUsController.php(53): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+CRITICAL - 2025-11-28 12:22:52 --> [Caused by] mysqli_sql_exception: Table 'codeigniter.pat_contact_us' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'dev_test43@yopmail.com\', \'Beagle\', \'cdcsdcds\', \'2025-11-28 12:22:52\', \'2025-11-28 12:22:52\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'dev_test43@yopmail.com\', \'Beagle\', \'cdcsdcds\', \'2025-11-28 12:22:52\', \'2025-11-28 12:22:52\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (\'Dev Testing\', \'dev_test43@yopmail.com\', \'Beagle\', \'cdcsdcds\', \'2025-11-28 12:22:52\', \'2025-11-28 12:22:52\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pat_contact_us` (`full_name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES (:full_name:, :email:, :subject:, :message:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Frontend\ContactUsController.php(53): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+DEBUG - 2025-11-28 12:23:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 12:24:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 12:24:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 12:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 12:24:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 12:51:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 12:58:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:01:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:02:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:06:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:13:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-28 13:13:08 --> ErrorException: Undefined variable $data
+[Method: GET, Route: list_contact_us_forms]
+in APPPATH\Views\Backend\contact_us_forms_listing.php on line 28.
+ 1 APPPATH\Views\Backend\contact_us_forms_listing.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\codeigniter\\app\\Views\\Backend\\contact_us_forms_listing.php', 28)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\codeigniter\\app\\Views\\Backend\\contact_us_forms_listing.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/contact_us_forms_listing', [], true)
+ 5 APPPATH\Controllers\Frontend\ContactUsController.php(136): view('Backend/contact_us_forms_listing', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Frontend\ContactUsController->contact_us_forms_listing()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Frontend\ContactUsController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\codeigniter\\public\\index.php')
+DEBUG - 2025-11-28 13:13:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:13:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:14:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:14:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:15:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:16:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:26:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-28 13:27:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

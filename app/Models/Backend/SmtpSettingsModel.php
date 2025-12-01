@@ -15,7 +15,7 @@ class SmtpSettingsModel extends Model
         'smtp_pass',
         'smtp_port',
         'smtp_crypto',
-        'from_email',
+        'from_email', 
         'from_name',
         'admin_emails',
         'is_active',

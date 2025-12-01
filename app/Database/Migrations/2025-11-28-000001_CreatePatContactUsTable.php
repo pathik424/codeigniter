@@ -1,0 +1,55 @@
+<?php
+
+namespace App\Database\Migrations;
+
+use CodeIgniter\Database\Migration;
+
+class CreatePatContactUsTable extends Migration
+{
+    public function up()
+    {
+        $this->forge->addField([
+            'id' => [
+                'type'           => 'INT',
+                'constraint'     => 11,
+                'unsigned'       => true,
+                'auto_increment' => true,
+            ],
+            'full_name' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 150,
+            ],
+            'email' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 150,
+            ],
+            'subject' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 200,
+            ],
+            'message' => [
+                'type' => 'TEXT',
+            ],
+            'created_at' => [
+                'type'    => 'DATETIME',
+                'null'    => true,
+                'default' => null,
+            ],
+            'updated_at' => [
+                'type'    => 'DATETIME',
+                'null'    => true,
+                'default' => null,
+            ],
+        ]);
+
+        $this->forge->addKey('id', true);
+        $this->forge->createTable('pat_contact_us');
+    }
+
+    public function down()
+    {
+        $this->forge->dropTable('pat_contact_us');
+    }
+}
+
+

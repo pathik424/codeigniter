@@ -33,7 +33,12 @@ $routes->post('login', 'Auth\Login::login'); //Login is a controller
  $routes->get('home', 'Frontend\HomeController::home_index');
  $routes->get('post/(:num)', 'Frontend\HomeController::post_single/$1');
  $routes->post('store_consultation', 'Frontend\HomeController::store_consultation');
+ $routes->get('image_galary_listing', 'Frontend\HomeController::image_galary_listing');
 
+
+ ////// Contact Us //////
+ $routes->get('contact_us', 'Frontend\ContactUsController::index');
+ $routes->post('contact_us', 'Frontend\ContactUsController::store');
 
 ////////Backend Home///////////////
 $routes->get('admin_dashboard', 'Backend\DashboardController::index', ['filter' => 'authGuard']); //Login is a controller
@@ -68,7 +73,18 @@ $routes->get('smtp_settings', 'Backend\SmtpSettingsController::index', ['filter'
 $routes->post('smtp_settings/save', 'Backend\SmtpSettingsController::save', ['filter' => 'authGuard']);
 $routes->get('smtp_settings/test', 'Backend\SmtpSettingsController::test', ['filter' => 'authGuard']);
 
+// Gallery routes
+$routes->get('gallery_listing', 'Backend\GalleryController::index', ['filter' => 'authGuard']);
+$routes->get('add_gallery', 'Backend\GalleryController::create', ['filter' => 'authGuard']);
+$routes->post('store_gallery', 'Backend\GalleryController::store', ['filter' => 'authGuard']);
+$routes->get('edit_gallery/(:num)', 'Backend\GalleryController::edit/$1', ['filter' => 'authGuard']);
+$routes->post('update_gallery/(:num)', 'Backend\GalleryController::update/$1', ['filter' => 'authGuard']);
+$routes->get('delete_gallery/(:num)', 'Backend\GalleryController::delete/$1', ['filter' => 'authGuard']);
+
 // Consultation management routes
 $routes->get('consulting_services_list', 'Backend\HeaderController::consulting_listing', ['filter' => 'authGuard']);
+
+// Contact Us Forms routes
+$routes->get('list_contact_us_forms', 'Frontend\ContactUsController::contact_us_forms_listing', ['filter' => 'authGuard']);
 
 

@@ -4,15 +4,15 @@ namespace App\Models\Backend;
 
 use CodeIgniter\Model;
 
-class HeaderModel extends Model
+class GalleryModel extends Model
 {
-    protected $table            = 'pat_pat_header';
-    protected $primaryKey       = 'id';
+    protected $table            = 'pat_pat_gallery';
+    protected $primaryKey       = 'gallery_id';
 
     protected $allowedFields    = [
-        'header_title',
-        'header_url',
-        'is_active',
+        'image',
+        'animal_type',
+        'breed_name',
         'created_at',
         'updated_at',
     ];
@@ -21,3 +21,4 @@ class HeaderModel extends Model
     protected $createdField     = 'created_at';
     protected $updatedField     = 'updated_at';
 }
+

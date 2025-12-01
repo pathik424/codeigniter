@@ -415,6 +415,9 @@
     	</div>
     </section>
 		
+
+
+
 		<section class="ftco-section">
 			<div class="container">
 				<div class="row justify-content-center pb-5 mb-3">
@@ -423,85 +426,37 @@
           </div>
         </div>
 				<div class="row">
-          <div class="col-md-4 ftco-animate">
-            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(<?php echo base_url('FontendAssets/images/gallery-1.jpg'); ?>);">
-            	<a href="images/gallery-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4">
-	              <div class="text w-100 mb-3">
-	              	<span>Cat</span>
-	              	<h2><a href="work-single.html">Persian Cat</a></h2>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(<?php echo base_url('FontendAssets/images/gallery-2.jpg'); ?>);">
-            	<a href="images/gallery-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4">
-	              <div class="text w-100 mb-3">
-	              	<span>Dog</span>
-	              	<h2><a href="work-single.html">Pomeranian</a></h2>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(<?php echo base_url('FontendAssets/images/gallery-3.jpg'); ?>);">
-            	<a href="images/gallery-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4">
-	              <div class="text w-100 mb-3">
-	              	<span>Cat</span>
-	              	<h2><a href="work-single.html">Sphynx Cat</a></h2>
-	              </div>
-              </div>
-            </div>
-          </div>
+		
+          <?php if (!empty($gallery)): ?>
+            <?php foreach ($gallery as $item): ?>
+		
 
+				
           <div class="col-md-4 ftco-animate">
-            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(<?php echo base_url('FontendAssets/images/gallery-4.jpg'); ?>);">
-            	<a href="images/gallery-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(<?php echo base_url('uploads/gallery/' . $item['image']); ?>);">
+            	<a href="<?php echo base_url('uploads/gallery/' . $item['image']); ?>" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="fa fa-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Cat</span>
-	              	<h2><a href="work-single.html">British Shorthair</a></h2>
+	              	<span><?php echo $item['animal_type']; ?></span>
+	              	<h2><a href="work-single.html"> <?php echo $item['breed_name']; ?></a></h2>
 	              </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(<?php echo base_url('FontendAssets/images/gallery-5.jpg'); ?>);">
-            	<a href="images/gallery-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4">
-	              <div class="text w-100 mb-3">
-	              	<span>Dog</span>
-	              	<h2><a href="work-single.html">Beagle</a></h2>
-	              </div>
-              </div>
+          </div>	
+          <?php endforeach; ?>
+          <?php else: ?>
+            <div class="col-12 text-center">
+              <p>No gallery images available.</p>
             </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="work mb-4 img d-flex align-items-end" style="background-image: url(<?php echo base_url('FontendAssets/images/gallery-6.jpg'); ?>);">
-            	<a href="images/gallery-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4">
-	              <div class="text w-100 mb-3">
-	              	<span>Dog</span>
-	              	<h2><a href="work-single.html">Pug</a></h2>
-	              </div>
-              </div>
-            </div>
-          </div>
+          <?php endif; ?>
+
+
+
+
+
+
         </div>
 			</div>
 		</section>
