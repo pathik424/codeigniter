@@ -4,12 +4,12 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateClientFeedbacks extends Migration
+class CreatenewClientFeedbacks extends Migration
 {
     public function up()
     {
-                $this->forge->addField([
-            'client_id' => [
+                       $this->forge->addField([
+            'feedback_id' => [
                 'type'           => 'INT',
                 'constraint'     => 11,
                 'unsigned'       => true,
@@ -20,14 +20,18 @@ class CreateClientFeedbacks extends Migration
                 'constraint' => 11,
                 'unsigned'   => true,
             ],
-            'title' => [
+            'client_name' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255,
             ],
-            'textarea' => [
+            'client_position' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            'client_feedback' => [
                 'type' => 'TEXT',
             ],
-            'image' => [
+            'client_profile_image' => [
                 'type'       => 'VARCHAR',
                 'constraint' => 255,
                 'null'       => true,
@@ -42,13 +46,13 @@ class CreateClientFeedbacks extends Migration
             ],
         ]);
 
-        $this->forge->addKey('client_id', true);
+        $this->forge->addKey('feedback_id', true);
         $this->forge->addKey('user_id');
-        $this->forge->createTable('pat_client_feedbacks');
+        $this->forge->createTable('pat_client_new_feedbacks');
     }
 
     public function down()
     {
-        $this->forge->dropTable('pat_client_feedbacks');
+        $this->forge->dropTable('pat_client_new_feedbacks');
     }
 }

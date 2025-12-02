@@ -91,5 +91,11 @@ $routes->post('list_contact_us_forms/save', 'Frontend\StoreAddressController::ne
 $routes->get('add_new_address', 'Frontend\StoreAddressController::new_address', ['filter' => 'authGuard']);
 $routes->post('store_address', 'Frontend\StoreAddressController::new_address_store', ['filter' => 'authGuard']);
 
-
+// Client Feedbacks routes
+$routes->get('client_feedbacks_listing', 'Backend\ClientFeedbackController::index', ['filter' => 'authGuard']);
+$routes->get('add_new_client_feedback', 'Backend\ClientFeedbackController::create', ['filter' => 'authGuard']);
+$routes->post('store_client_feedback', 'Backend\ClientFeedbackController::store', ['filter' => 'authGuard']);
+$routes->get('edit_client_feedback/(:num)', 'Backend\ClientFeedbackController::edit/$1', ['filter' => 'authGuard']);
+$routes->post('update_client_feedback/(:num)', 'Backend\ClientFeedbackController::update/$1', ['filter' => 'authGuard']);
+$routes->get('delete_client_feedback/(:num)', 'Backend\ClientFeedbackController::delete/$1', ['filter' => 'authGuard']);
 

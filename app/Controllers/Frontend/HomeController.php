@@ -7,6 +7,7 @@ use App\Models\Backend\DogFoodProductModel;
 use App\Models\Backend\HeaderModel;
 use App\Models\Backend\PostModel;
 use App\Models\Auth\UserModel;
+use App\Models\Backend\ClientFeedbackModel;
 use App\Models\Frontend\ConsultationModel;
 use App\Models\Backend\SmtpSettingsModel;
 use App\Models\Backend\GalleryModel;
@@ -19,6 +20,7 @@ class HomeController extends BaseController
         $productModel = new DogFoodProductModel();
         $headerModel = new HeaderModel();
         $postModel = new PostModel();
+        $clientFeedbackModel = new ClientFeedbackModel();
 
         // Fetch only active products
         $data['products'] = $productModel
@@ -47,6 +49,7 @@ class HomeController extends BaseController
         // Fetch gallery images
         $galleryModel = new GalleryModel();
         $data['gallery'] = $galleryModel->orderBy('gallery_id', 'DESC')->findAll();
+        $data['client_feedbacks'] = $clientFeedbackModel->orderBy('feedback_id', 'DESC')->findAll();
 
         return view('Frontend/home', $data);
     }
