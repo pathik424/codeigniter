@@ -89,7 +89,7 @@
   <script src="<?php echo base_url('FontendAssets/js/owl.carousel.min.js') ?>"></script>
   <script src="<?php echo base_url('FontendAssets/js/jquery.magnific-popup.min.js') ?>"></script>
   <script src="<?php echo base_url('FontendAssets/js/scrollax.min.js') ?>"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?= esc(env('GOOGLE_MAPS_API_KEY')) ?>&callback=initMap"></script>
   <script src="<?php echo base_url('FontendAssets/js/google-map.js') ?>"></script>
   <script src="<?php echo base_url('FontendAssets/js/main.js') ?>"></script>
 

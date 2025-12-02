@@ -38,6 +38,7 @@ $routes->post('login', 'Auth\Login::login'); //Login is a controller
 
  ////// Contact Us //////
  $routes->get('contact_us', 'Frontend\ContactUsController::index');
+//  $routes->get('contact_us', 'Frontend\ContactUsController::index');
  $routes->post('contact_us', 'Frontend\ContactUsController::store');
 
 ////////Backend Home///////////////
@@ -86,5 +87,9 @@ $routes->get('consulting_services_list', 'Backend\HeaderController::consulting_l
 
 // Contact Us Forms routes
 $routes->get('list_contact_us_forms', 'Frontend\ContactUsController::contact_us_forms_listing', ['filter' => 'authGuard']);
+$routes->post('list_contact_us_forms/save', 'Frontend\StoreAddressController::new_address_store', ['filter' => 'authGuard']);
+$routes->get('add_new_address', 'Frontend\StoreAddressController::new_address', ['filter' => 'authGuard']);
+$routes->post('store_address', 'Frontend\StoreAddressController::new_address_store', ['filter' => 'authGuard']);
+
 
 

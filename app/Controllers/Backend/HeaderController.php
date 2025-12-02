@@ -12,7 +12,7 @@ class HeaderController extends BaseController
     {
         $model = new HeaderModel();
         $data['headers'] = $model->orderBy('id', 'DESC')->findAll();
-        return view('Backend/headers_listing', $data);
+        return view('Backend/header_listing/index', $data);
     }
 
     // public function test()
@@ -22,7 +22,7 @@ class HeaderController extends BaseController
 
     public function create()
     {
-        return view('Backend/add_new_header');
+        return view('Backend/header_listing/add_new_header');
     }
 
     public function store()
@@ -55,7 +55,7 @@ class HeaderController extends BaseController
     {
         $model = new HeaderModel();
         $data['header'] = $model->find($id);
-        return view('Backend/edit_header', $data);
+        return view('Backend/header_listing/edit_header', $data);
     }
 
     public function update($id)

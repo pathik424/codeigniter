@@ -4,25 +4,30 @@ namespace App\Controllers\Frontend;
 
 use App\Controllers\BaseController;
 use App\Models\Backend\SmtpSettingsModel;
+use App\Models\Backend\StoreAddress;
 use App\Models\Frontend\ContactUsModel;
 use Config\Services;
 
 class ContactUsController extends BaseController
 {
     protected ContactUsModel $contactModel;
+    protected StoreAddress $storeAddressModel;
     protected SmtpSettingsModel $smtpModel;
     protected array $smtpSettings;
 
     public function __construct()
     {
         $this->contactModel = new ContactUsModel();
+        $this->storeAddressModel = new StoreAddress();
         $this->smtpModel    = new SmtpSettingsModel();
         $this->smtpSettings = $this->smtpModel->getActiveSettings() ?? [];
     }
 
     public function index()
     {
-        return view('Frontend/contact_us');
+                // Fetch only one static store address row
+    $data['store_address'] = $this->storeAddressModel->first();
+        return view('Frontend/contact_us',$data);
     }
 
     public function store()
@@ -132,7 +137,10 @@ class ContactUsController extends BaseController
     public function contact_us_forms_listing()
     {
         $data['contact_forms'] = $this->contactModel->orderBy('created_at', 'DESC')->findAll();
+      
+         // Fetch only one static store address row
+    $data['store_address'] = $this->storeAddressModel->first();
 
-        return view('Backend/contact_us_forms_listing', $data);
+        return view('Backend/store_address/index', $data);
     }
 }
