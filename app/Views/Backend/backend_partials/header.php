@@ -132,6 +132,23 @@
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
+                        <span class="icon document" aria-hidden="true"></span>Packages
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                    <ul class="cat-sub-menu">
+                        <li>
+                            <a href="/packages_listing">All Packages</a>
+                        </li>
+                        <li>
+                            <a href="/add_new_package">Add new Package</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
                         <span class="icon document" aria-hidden="true"></span>Set your SMTP
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
@@ -164,13 +181,31 @@
         </div>
     </div>
     <div class="sidebar-footer">
-        <a href="##" class="sidebar-user">
+        <a href="/my_profile" class="sidebar-user">
             <span class="sidebar-user-img">
-                <picture><source srcset="<?php echo base_url('BackendAssets/img/avatar/avatar-illustrated-01.webp') ?>" type="image/webp"><img src="<?php echo base_url('BackendAssets/img/avatar/avatar-illustrated-01.png') ?>" alt="User name"></picture>
+                <?php 
+                  // Prefer session profile_picture, but fall back to DB if session is empty.
+                  $profilePicture = session()->get('profile_picture');
+                  if (empty($profilePicture) && session()->get('user_id')) {
+                    $userModel = new \App\Models\Auth\UserModel();
+                    $user = $userModel->find(session()->get('user_id'));
+                    if ($user && !empty($user['profile_picture'])) {
+                      $profilePicture = $user['profile_picture'];
+                      // store in session for subsequent requests
+                      session()->set('profile_picture', $profilePicture);
+                    }
+                  }
+                  $profilePath = !empty($profilePicture) ? FCPATH . 'uploads/my_profile/' . $profilePicture : null;
+                  if (!empty($profilePicture) && !empty($profilePath) && is_file($profilePath)):
+                ?>
+                    <img src="<?= base_url('uploads/my_profile/' . esc($profilePicture)) ?>" alt="Profile Picture" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                <?php else: ?>
+                    <picture><source srcset="<?php echo base_url('BackendAssets/img/avatar/avatar-illustrated-01.webp') ?>" type="image/webp"><img src="<?php echo base_url('BackendAssets/img/avatar/avatar-illustrated-01.png') ?>" alt="User name"></picture>
+                <?php endif; ?>
             </span>
             <div class="sidebar-user-info">
-                <span class="sidebar-user__title">Nafisa Sh.</span>
-                <span class="sidebar-user__subtitle">Support manager</span>
+                <span class="sidebar-user__title"><?= esc(session()->get('username') ?? 'User') ?></span>
+                <span class="sidebar-user__subtitle">Admin</span>
             </div>
         </a>
     </div>
@@ -256,11 +291,19 @@
         <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
           <span class="sr-only">My profile</span>
           <span class="nav-user-img">
-            <picture><source srcset="<?php echo base_url('BackendAssets/img/avatar/avatar-illustrated-02.webp') ?>" type="image/webp"><img src="<?php echo base_url('BackendAssets/img/avatar/avatar-illustrated-02.png') ?>" alt="User name"></picture>
+            <?php 
+                $profilePicture = session()->get('profile_picture');
+                $profilePath = !empty($profilePicture) ? FCPATH . 'uploads/my_profile/' . $profilePicture : null;
+                if (!empty($profilePicture) && !empty($profilePath) && is_file($profilePath)):
+            ?>
+                <img src="<?= base_url('uploads/my_profile/' . esc($profilePicture)) ?>" alt="Profile Picture" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            <?php else: ?>
+                <picture><source srcset="<?php echo base_url('BackendAssets/img/avatar/avatar-illustrated-02.webp') ?>" type="image/webp"><img src="<?php echo base_url('BackendAssets/img/avatar/avatar-illustrated-02.png') ?>" alt="User name"></picture>
+            <?php endif; ?>
           </span>
         </button>
         <ul class="users-item-dropdown nav-user-dropdown dropdown">
-          <li><a href="##">
+          <li><a href="/my_profile">
               <i data-feather="user" aria-hidden="true"></i>
               <span>Profile</span>
             </a></li>

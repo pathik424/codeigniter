@@ -45,6 +45,13 @@ $routes->post('login', 'Auth\Login::login'); //Login is a controller
 $routes->get('admin_dashboard', 'Backend\DashboardController::index', ['filter' => 'authGuard']); //Login is a controller
 $routes->get('logout', 'Auth\Login::logout');
 
+// Profile Picture Management
+$routes->get('my_profile', 'Backend\ProfilePictureController::index', ['filter' => 'authGuard']); 
+$routes->post('profile/update', 'Backend\ProfilePictureController::update', ['filter' => 'authGuard']);
+$routes->post('update_profile/(:num)', 'Backend\ProfilePictureController::update_profile/$1', ['filter' => 'authGuard']);
+ 
+
+
 $routes->get('/dogfoodproduct/create', 'Backend\DogFoodProductController::create');
 $routes->post('/dogfoodproduct/store', 'Backend\DogFoodProductController::store');
 $routes->get('dogfoodproduct/delete/(:num)', 'Backend\DashboardController::delete/$1');
@@ -68,6 +75,14 @@ $routes->post('store_post', 'Backend\PostController::store', ['filter' => 'authG
 $routes->get('edit_post/(:num)', 'Backend\PostController::edit/$1', ['filter' => 'authGuard']);
 $routes->post('update_post/(:num)', 'Backend\PostController::update/$1', ['filter' => 'authGuard']);
 $routes->get('delete_post/(:num)', 'Backend\PostController::delete/$1', ['filter' => 'authGuard']);
+
+// Package management routes
+$routes->get('packages_listing', 'Backend\PackageController::index', ['filter' => 'authGuard']);
+$routes->get('add_new_package', 'Backend\PackageController::create', ['filter' => 'authGuard']);
+$routes->post('store_package', 'Backend\PackageController::store', ['filter' => 'authGuard']);
+$routes->get('edit_package/(:num)', 'Backend\PackageController::edit/$1', ['filter' => 'authGuard']);
+$routes->post('packages/(:num)/update', 'Backend\PackageController::update/$1', ['filter' => 'authGuard']);
+$routes->get('delete_package/(:num)', 'Backend\PackageController::delete/$1', ['filter' => 'authGuard']);
 
 // SMTP Settings routes
 $routes->get('smtp_settings', 'Backend\SmtpSettingsController::index', ['filter' => 'authGuard']);
@@ -98,4 +113,14 @@ $routes->post('store_client_feedback', 'Backend\ClientFeedbackController::store'
 $routes->get('edit_client_feedback/(:num)', 'Backend\ClientFeedbackController::edit/$1', ['filter' => 'authGuard']);
 $routes->post('update_client_feedback/(:num)', 'Backend\ClientFeedbackController::update/$1', ['filter' => 'authGuard']);
 $routes->get('delete_client_feedback/(:num)', 'Backend\ClientFeedbackController::delete/$1', ['filter' => 'authGuard']);
+
+
+
+
+// Blog routes
+$routes->get('blog', 'Backend\PostController::blog_view');
+
+// Gallery routes
+$routes->get('gallery', 'Backend\GalleryController::image_gallery_listing');
+
 

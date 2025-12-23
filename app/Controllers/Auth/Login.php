@@ -46,6 +46,7 @@ class Login extends BaseController
             'username'   => $user['username'],
             'email'      => $user['email'],
             'user_role'  => $user['user_role'],
+            'profile_picture' => $user['profile_picture'] ?? null,
             'logged_in'  => true
         ]);
 

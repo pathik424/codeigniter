@@ -4,9 +4,18 @@ namespace App\Controllers\Backend;
 
 use App\Controllers\BaseController;
 use App\Models\Backend\GalleryModel;
+use App\Models\Backend\HeaderModel;
 
 class GalleryController extends BaseController
 {
+    public function image_gallery_listing()
+    {
+        $model = new GalleryModel();
+          $headerModel = new HeaderModel();
+          $data['headers'] = $headerModel->orderBy('id', 'ASC')->findAll();
+        $data['gallery'] = $model->orderBy('gallery_id', 'DESC')->limit(30)->findAll();
+        return view('Frontend/gallery', $data);
+    }
     public function index()
     {
         $model = new GalleryModel();

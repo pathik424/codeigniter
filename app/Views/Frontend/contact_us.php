@@ -1,4 +1,5 @@
-<?php echo view('Frontend/frontend_partials/header', ['title' => 'Contact Us Page']); ?>
+<?= view('Frontend/frontend_partials/header', ['title' => 'Contact Us', 'headers' => isset($headers) ? $headers : []]) ?>
+
 
 
     <!-- END nav -->

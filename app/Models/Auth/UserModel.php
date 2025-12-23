@@ -12,7 +12,7 @@ class UserModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name', 'username', 'email', 'password', 'user_role'];
+    protected $allowedFields    = ['name', 'username', 'email', 'password','profile_picture', 'user_role'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -28,10 +28,9 @@ class UserModel extends Model
     protected $deletedField  = 'deleted_at';
 
     // Validation
-    protected $validationRules      = ['email' => 'required|valid_email|is_unique[users.email]',
-    'password' => 'required|min_length[8]',];
+    protected $validationRules      = [];
     protected $validationMessages   = [];
-    protected $skipValidation       = false;
+    protected $skipValidation       = true;
     protected $cleanValidationRules = true;
 
     // Callbacks
@@ -45,7 +44,6 @@ protected function hashPassword(array $data)
     $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
     return $data;
 }
-    protected $afterInsert    = ['hashPassword'];
     protected $beforeUpdate   = [];
     protected $afterUpdate    = [];
     protected $beforeFind     = [];

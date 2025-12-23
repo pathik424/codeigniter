@@ -11,6 +11,7 @@ use App\Models\Backend\ClientFeedbackModel;
 use App\Models\Frontend\ConsultationModel;
 use App\Models\Backend\SmtpSettingsModel;
 use App\Models\Backend\GalleryModel;
+use App\Models\Backend\PackageModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class HomeController extends BaseController
@@ -21,6 +22,7 @@ class HomeController extends BaseController
         $headerModel = new HeaderModel();
         $postModel = new PostModel();
         $clientFeedbackModel = new ClientFeedbackModel();
+        $packageModel = new PackageModel();
 
         // Fetch only active products
         $data['products'] = $productModel
@@ -50,6 +52,7 @@ class HomeController extends BaseController
         $galleryModel = new GalleryModel();
         $data['gallery'] = $galleryModel->orderBy('gallery_id', 'DESC')->findAll();
         $data['client_feedbacks'] = $clientFeedbackModel->orderBy('feedback_id', 'DESC')->findAll();
+        $data['package'] = $packageModel->orderBy('id', 'DESC')->findAll();
 
         return view('Frontend/home', $data);
     }

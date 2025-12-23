@@ -4,9 +4,20 @@ namespace App\Controllers\Backend;
 
 use App\Controllers\BaseController;
 use App\Models\Backend\PostModel;
+use App\Models\Backend\HeaderModel;
 
 class PostController extends BaseController
 {
+
+        public function blog_view()
+    {
+        $model = new PostModel();
+        $headerModel = new HeaderModel();
+        $blog_view['headers'] = $headerModel->orderBy('id', 'ASC')->findAll();
+        $blog_view['posts'] = $model->orderBy('post_id', 'DESC')->findAll();
+        return view('Frontend/blog', $blog_view);
+    }
+
     public function index()
     {
         $model = new PostModel();
@@ -99,4 +110,3 @@ class PostController extends BaseController
         return redirect()->to('/posts_listing')->with('message', 'Post deleted');
     }
 }
-

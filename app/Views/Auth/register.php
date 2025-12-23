@@ -17,9 +17,19 @@
             </div>
         <?php endif; ?>
 
+        <?php if (session()->has('errors')): ?>
+            <div class="alert alert-danger" style="padding: 10px; border-radius: 5px; margin-bottom: 15px; background-color: #f8d7da; color: #721c24;">
+                <ul style="margin: 0; padding-left: 20px;">
+                    <?php foreach (session('errors') as $error): ?>
+                        <li><?= esc($error) ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
 
 
-        <form method="post" action="<?= base_url('register/save'); ?>">
+
+        <form method="post" action="<?= base_url('register/save'); ?>" enctype="multipart/form-data">
 
             <div class="input-box">
                 <input type="text" class="form-control" name="name" placeholder="Enter name">
@@ -37,6 +47,12 @@
                 <input type="email" class="form-control" name="email" placeholder="Enter email">
                 <span class="icon"><i class='bx bx-envelope'></i></span>
                 <label>Your Email</label>
+            </div>
+            
+            <div class="input-box">
+                <input type="file" class="form-control" name="profile_picture" placeholder="Upload profile picture">
+                <span class="icon"><i class='bx bx-image'></i></span>
+                <label>Profile Picture</label>
             </div>
 
             <div class="input-box">
@@ -225,4 +241,3 @@ body{
     z-index: 1;
 }
 </style>
-

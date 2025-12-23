@@ -61,14 +61,25 @@
 	        		<?php endforeach; ?>
 	        	<?php else: ?>
 	        		<li class="nav-item active"><a href="<?= base_url('home') ?>" class="nav-link">Home</a></li>
-	        		<li class="nav-item"><a href="#" class="nav-link">About</a></li>
-	        		<li class="nav-item"><a href="#" class="nav-link">Veterinarian</a></li>
-	        		<li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+	        		<li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+	        		<li class="nav-item"><a href="/Veterinarian" class="nav-link">Veterinarian</a></li>
+	        		<li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+	          <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
+	          <li class="nav-item"><a href="/pricing" class="nav-link">Pricing</a></li>
+	          <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="/contact_us" class="nav-link">Contacts</a></li>
 	        	<?php endif; ?>
+
+				<?php if (session()->get('logged_in')): ?>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Welcome, <?= esc(session()->get('username')) ?>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="<?= base_url('logout') ?>">Logout</a>
+						</div>
+					</li>
+				<?php endif; ?>
 	        </ul>
 	      </div>
 	    </div>

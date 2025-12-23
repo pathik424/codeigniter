@@ -269,13 +269,13 @@
 				<div class="carousel-testimony owl-carousel ftco-owl">
 
 					<?php foreach ($client_feedbacks as $feedback): ?>
-						<?php 
+						<?php
 
 						// echo "<pre>";
 						// print_r($client_feedbacks); 
 						// echo "</pre>";
 						// exit;
-					
+
 						//print_r($client_feedbacks);
 						?>
 
@@ -318,60 +318,33 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-4 ftco-animate">
-				<div class="block-7">
-					<div class="img" style="background-image: url(<?php echo base_url('FontendAssets/images/pricing-1.jpg'); ?>);"></div>
-					<div class="text-center p-4">
-						<span class="excerpt d-block">Personal</span>
-						<span class="price"><sup>$</sup> <span class="number">49</span> <sub>/mos</sub></span>
+			<?php // Assuming $packages is an array of package data passed to the view 
+			foreach ($package as $pkg):
+			?>
+				<div class="col-md-4 ftco-animate">
+					<div class="block-7">
+						<div class="img" style="background-image: url('<?php echo $pkg['package_image'] ? base_url('uploads/packages/' . $pkg['package_image']) : base_url('FontendAssets/images/pricing-1.jpg'); ?>');"></div>
+						<div class="text-center p-4">
+							<span class="excerpt d-block"><?= esc($pkg['package_name']) ?></span>
+							<span class="price"><sup>$</sup> <span class="number"><?= esc($pkg['package_price']) ?></span> <sub>/mos</sub></span>
 
-						<ul class="pricing-text mb-5">
-							<li><span class="fa fa-check mr-2"></span>5 Dog Walk</li>
-							<li><span class="fa fa-check mr-2"></span>3 Vet Visit</li>
-							<li><span class="fa fa-check mr-2"></span>3 Pet Spa</li>
-							<li><span class="fa fa-check mr-2"></span>Free Supports</li>
-						</ul>
+							<ul class="pricing-text mb-5">
+								<?php
+								$services = trim($pkg['package_services'], "[]");
+								$services = explode(',', $services);
 
-						<a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
+								foreach ($services as $service) {
+									echo "<li><span class=\"fa fa-check mr-2\"></span>" . trim($service, " \"") . "</li>";
+								}
+								?>
+							</ul>
+
+							<a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-md-4 ftco-animate">
-				<div class="block-7">
-					<div class="img" style="background-image: url(<?php echo base_url('FontendAssets/images/pricing-2.jpg'); ?>);"></div>
-					<div class="text-center p-4">
-						<span class="excerpt d-block">Business</span>
-						<span class="price"><sup>$</sup> <span class="number">79</span> <sub>/mos</sub></span>
+			<?php endforeach; ?>
 
-						<ul class="pricing-text mb-5">
-							<li><span class="fa fa-check mr-2"></span>5 Dog Walk</li>
-							<li><span class="fa fa-check mr-2"></span>3 Vet Visit</li>
-							<li><span class="fa fa-check mr-2"></span>3 Pet Spa</li>
-							<li><span class="fa fa-check mr-2"></span>Free Supports</li>
-						</ul>
-
-						<a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 ftco-animate">
-				<div class="block-7">
-					<div class="img" style="background-image: url(<?php echo base_url('FontendAssets/images/pricing-3.jpg'); ?>);"></div>
-					<div class="text-center p-4">
-						<span class="excerpt d-block">Ultimate</span>
-						<span class="price"><sup>$</sup> <span class="number">109</span> <sub>/mos</sub></span>
-
-						<ul class="pricing-text mb-5">
-							<li><span class="fa fa-check mr-2"></span>5 Dog Walk</li>
-							<li><span class="fa fa-check mr-2"></span>3 Vet Visit</li>
-							<li><span class="fa fa-check mr-2"></span>3 Pet Spa</li>
-							<li><span class="fa fa-check mr-2"></span>Free Supports</li>
-						</ul>
-
-						<a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 </section>
